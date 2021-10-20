@@ -1,0 +1,56 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <ul style="list-style: none;">
+          
+            <template v-for="item in items">
+                <li>
+                    <img :src="item.image">
+                </li>
+                <li>
+                {{item.title}}
+                </li>
+            </template>
+            
+        </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el:'#app',
+            data(){
+                return{
+                    items:[
+                    {
+                        id:1,
+                        image:'https://picsum.photos/210/188/?image=1',
+                        title: 'Work'
+                    },
+                    {
+                        id:2,
+                        image:'https://picsum.photos/210/188/?image=100',
+                        title: 'Ocean View'
+                    },
+                    {
+                        id:3,
+                        image:'https://picsum.photos/210/188/?image=160',
+                        title: 'Cell phone'
+                    },
+                    {
+                        id:4,
+                        image:'https://picsum.photos/210/188/?image=200',
+                        title: 'Cow'
+                    },
+                    ]
+                };
+            }
+        })
+    </script>
+</body>
+</html>

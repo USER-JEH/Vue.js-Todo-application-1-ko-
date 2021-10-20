@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <button type="button" @click="add">Plus</button>
+        {{counter}}
+
+        <input type="text" @keyup.enter="keyUp">
+    </div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script>
+    new Vue({
+        el:'#app',
+        data(){
+             return{
+                 counter:0
+              };
+        },
+        methods: {
+            add(){
+                this.counter++;
+                },
+                keyUp(ev){
+                    if(ev.keyCode !== 13){
+                        console.log('Not Enter Key');
+                        return;
+                    }
+
+                    console.log('Pushed Enter Key')
+                }
+            }
+        });
+</script>
+</body>
+</html>
